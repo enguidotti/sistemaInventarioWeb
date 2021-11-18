@@ -1,0 +1,17 @@
+﻿@model sistemaInventarioWeb.Models.Marca
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar Marca</h2>
+
+<form method="post">
+    <div class="form-group">
+        <input type="hidden" name="id_marca" value="@Model.id_marca" />
+        <label class="control-label">Nombre Marca</label>
+        <input type="text" name="nombre" value="@Model.nombre" class="form-control" />
+    </div>
+    <a href="@Url.Action("Index","Marcas")" class="btn btn-default">Volver a marcas</a>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+

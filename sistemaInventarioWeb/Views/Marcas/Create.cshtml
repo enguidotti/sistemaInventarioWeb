@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h1>Crear Marca</h1>
+<hr />
+<form method="post">
+    <div class="form-group">
+        <label>Nombre Marca</label>
+        <input type="text" class="form-control" name="nombre" id="nombre">
+    </div>
+    <a href="@Url.Action("Index","Marcas")" class="btn btn-default">Volver a Marcas</a>
+    <button type="submit" class="btn btn-primary" id="btnEnviar" >Guardar</button>
+</form>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    //Difernetes formas de llamar según librería
+    //documet.getElementById('btnEnviar')//aceptada por cualquier librería de javascript
+    //$('#btnEnviar')//aceptado siempre y cuando se utilice jquery 
+    $('#btnEnviar').click(function (e) {
+        let marca = document.getElementById('nombre').value;
+        if (marca == '') {
+            alert('Debe ingresar una marca');
+            e.preventDefault();
+        }
+    });
+    //TODO: Revisar porque se envia el formulario
+    //function validar() {
+    //    //captura el valor escrito en el input y se asigna a la variable marca
+    //    let marca = document.getElementById('nombre').value;
+    //    if (marca == '') {
+    //        alert('Debe ingresar una marca');
+    //    }
+    //}
+</script>

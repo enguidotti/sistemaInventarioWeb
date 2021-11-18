@@ -1,0 +1,19 @@
+﻿@model sistemaInventarioWeb.Models.Marca
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar marca</h2>
+
+<h3>¿Está seguro que desea eliminar la marca?</h3>
+
+<form method="post">
+    <div class="form-group">
+        <input type="hidden" name="id" value="@Model.id_marca" />
+        <label class="control-label">Nombre Marca:</label>
+        <label>@Model.nombre</label>
+    </div>
+    <a href="@Url.Action("Index","Marcas")" class="btn btn-default">Volver a marcas</a>
+    <button class="btn btn-danger" type="submit">Eliminar</button>
+</form>
+

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<sistemaInventarioWeb.Models.Marca>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista con todas las marcas</h2>
+
+<div class="col-12">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr class="bg-success">
+                <th>Id Marca</th>
+                <th>Nombre</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.id_marca</td>
+                    <td>@item.nombre</td>
+                    <td>
+                        <a href="@Url.Action("Edit","Marcas",new { id = item.id_marca })">Editar</a> |
+                        <a href="@Url.Action("Delete","Marcas",new { id = item.id_marca })">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
